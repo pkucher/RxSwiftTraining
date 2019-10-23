@@ -9,21 +9,19 @@ import UIKit
 
 class testViewController: UIViewController {
 
+    
+    var bt = UIButton()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        bt.setTitle("Teste", for: .normal)
+        bt.titleLabel?.font = UIFont.boldSystemFont(ofSize: 40)
+        bt.backgroundColor = .red
+        bt.translatesAutoresizingMaskIntoConstraints = false
+        guard let heightLabel = bt.titleLabel?.frame.size.height else { return }
+        bt.heightAnchor.constraint(equalToConstant: heightLabel).isActive = true
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+ 
 
 }
